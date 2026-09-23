@@ -1,27 +1,129 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curriculum Vitae</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
-    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "sidebar content"
+          "footer footer";
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 16px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 16px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #222;
+        background: #f2f2f2;
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      aside {
+        grid-area: sidebar;
+        align-self: start;
+      }
+
+      main {
+        grid-area: content;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-width: 0;
+      }
+
+      footer {
+        grid-area: footer;
+        text-align: center;
+      }
+
+      header, aside, section, footer {
+        padding: 16px;
+        background: white;
+        border: 1px solid #ddd;
+      }
+
+      nav a {
+        display: block;
+        padding: 6px 0;
+      }
+
+      a {
+        color: #245a81;
+      }
+
+      h1, h2, h3, p {
+        margin: 0 0 12px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+
+      section {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #eef3f6;
+      }
+
+      img {
+        object-fit: contain;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      input:not([type="radio"]) {
+        max-width: 100%;
+        padding: 6px;
+        font: inherit;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          grid-template-areas: "header" "sidebar" "content" "footer";
+          grid-template-columns: minmax(0, 1fr);
+          padding: 8px;
+        }
+
+        header td {
+          display: block;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <nav>
-      <a href="#tentang-saya">Tentang Saya</a> |
-      <a href="#pendidikan">Pendidikan</a> | <a href="#keahlian">Keahlian</a> |
-      <a href="#proyek">Proyek</a> | <a href="#organisasi">Organisasi</a> |
-      <a href="#kompetisi">Kompetisi</a> | <a href="#bahasa">Bahasa</a> |
-      <a href="#kontak">Kontak</a>
-    </nav>
-
-    <hr />
 
     <header>
       <table border="0" cellpadding="10">
@@ -58,7 +160,15 @@
       </table>
     </header>
 
-    <hr />
+    <aside>
+    <nav>
+      <a href="#tentang-saya">Tentang Saya</a>
+      <a href="#pendidikan">Pendidikan</a> <a href="#keahlian">Keahlian</a>
+      <a href="#proyek">Proyek</a> <a href="#organisasi">Organisasi</a>
+      <a href="#kompetisi">Kompetisi</a> <a href="#bahasa">Bahasa</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    </aside>
 
     <main>
       <section id="tentang-saya">
@@ -71,8 +181,6 @@
           mempelajari teknologi baru.
         </p>
       </section>
-
-      <hr />
 
       <section id="pendidikan">
         <h2>Pendidikan</h2>
@@ -120,8 +228,6 @@
         </article>
       </section>
 
-      <hr />
-
       <section id="keahlian">
         <h2>Keahlian</h2>
 
@@ -155,8 +261,6 @@
           <li>Komunikasi Efektif</li>
         </ul>
       </section>
-
-      <hr />
 
       <section id="proyek">
         <h2>Proyek Akademik & Pribadi</h2>
@@ -214,8 +318,6 @@
         </table>
       </section>
 
-      <hr />
-
       <section id="organisasi">
         <h2>Pengalaman Organisasi & Kepanitiaan</h2>
 
@@ -239,8 +341,6 @@
           </tr>
         </table>
       </section>
-
-      <hr />
 
       <section id="kompetisi">
         <h2>Pengalaman Kompetisi & Pelatihan</h2>
@@ -284,8 +384,6 @@
         </table>
       </section>
 
-      <hr />
-
       <section id="bahasa">
         <h2>Bahasa</h2>
 
@@ -296,8 +394,6 @@
           </li>
         </ul>
       </section>
-
-      <hr />
 
       <section id="kontak">
         <h2>Kontak</h2>
@@ -354,24 +450,15 @@
       </section>
     </main>
 
-    <hr />
-
     <footer>
       <p>
         <small>
           © 2026 Ngakan Ketut Kutha Giri Prasetia. Dokumen CV ini dibuat untuk
-          pemenuhan Tugas 2 Mata Kuliah Pemrograman Internet.
+          pemenuhan Tugas 3 Mata Kuliah Pemrograman Internet.
         </small>
       </p>
     </footer>
   </body>
-  <style>
-    * {
-      font-family: Nunito;
-      margin: 0;
-    }
-    #kontak {
-      background-color: blueviolet;
-    }
-  </style>
+
 </html>
+
